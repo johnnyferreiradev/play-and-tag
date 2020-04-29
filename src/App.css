@@ -17,3 +17,10 @@
 .App header h2 span {
     color: #8250f7;
 }
+
+.App footer {
+    width: 100%;
+    padding: 20px;
+    background: #333333;
+    border-top: 2px solid #8250f7;
+}
