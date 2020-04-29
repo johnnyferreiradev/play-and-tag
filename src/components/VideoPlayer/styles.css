@@ -1,0 +1,11 @@
+.video-player {
+    width: 100%;
+    background: #1a1a1a;
+    border-radius: 0px 0px 4px 4px;
+    box-shadow: 1px 4px 8px rgba(5, 5, 5, 0.548);
+    margin-bottom: 100px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

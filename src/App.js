@@ -1,6 +1,7 @@
 import React from 'react';
 
 import SearchVideo from './components/SearchVideo';
+import VideoPlayer from './components/VideoPlayer';
 
 import './general-styles.css';
 import './App.css';
@@ -13,6 +14,7 @@ function App() {
       </header>
       <main>
         <SearchVideo />
+        <VideoPlayer />
       </main>
       <footer>
         Desenvolvido por Johnny Ferreira
