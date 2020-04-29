@@ -1,0 +1,19 @@
+.App {
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.App header {
+    width: 100%;
+    padding: 20px;
+    background: #333333;
+    box-shadow: 1px 4px 8px rgba(5, 5, 5, 0.548);
+}
+
+.App header h2 span {
+    color: #8250f7;
+}
