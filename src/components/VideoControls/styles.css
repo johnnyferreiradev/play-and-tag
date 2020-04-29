@@ -1,0 +1,22 @@
+.video-controls {
+    position: fixed;
+    bottom: 0px;
+    z-index: 10;
+    width: 100%;
+}
+
+.video-controls .video-progress {
+    height: 8px;
+    background: #0a0a0a88;
+}
+
+.video-controls .video-progress .current-progress {
+    height: 8px;
+    width: 20%;
+    background: #8250f7;
+}
+
+.video-controls .controls {
+    padding: 28px 20px;
+    background: #1a1a1a;
+}

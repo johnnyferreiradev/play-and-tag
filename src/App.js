@@ -2,6 +2,7 @@ import React from 'react';
 
 import SearchVideo from './components/SearchVideo';
 import VideoPlayer from './components/VideoPlayer';
+import VideoControls from './components/VideoControls';
 
 import './general-styles.css';
 import './App.css';
@@ -16,9 +17,7 @@ function App() {
         <SearchVideo />
         <VideoPlayer />
       </main>
-      <footer>
-        Desenvolvido por Johnny Ferreira
-      </footer>
+      <VideoControls />
     </div>
   );
 }
