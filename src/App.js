@@ -1,5 +1,7 @@
 import React from 'react';
 
+import SearchVideo from './components/SearchVideo';
+
 import './general-styles.css';
 import './App.css';
 
@@ -10,7 +12,7 @@ function App() {
         <h2>Play<span>&#38;</span>Tag</h2>
       </header>
       <main>
-        Content
+        <SearchVideo />
       </main>
       <footer>
         Desenvolvido por Johnny Ferreira

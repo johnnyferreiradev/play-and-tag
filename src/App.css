@@ -18,6 +18,11 @@
     color: #8250f7;
 }
 
+.App main {
+    width: 100%;
+    max-width: 1080px;
+}
+
 .App footer {
     width: 100%;
     padding: 20px;
