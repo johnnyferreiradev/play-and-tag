@@ -1,30 +1,139 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 .video-player {
-    width: 100%;
-    background: #1a1a1a;
-    border-radius: 0px 0px 4px 4px;
-    box-shadow: 1px 4px 8px rgba(5, 5, 5, 0.548);
-    margin-bottom: 100px;
+  width: 100%;
+  background: #1a1a1a;
+  border-radius: 0px 0px 4px 4px;
+  box-shadow: 1px 4px 8px rgba(5, 5, 5, 0.548);
+  margin-bottom: 100px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .context-menu-item {
-    color: white;
-    background-color: #282828;
-    border-radius: 2px;
-    font-size: 15px;
-    font-family: "Montserrat", sans-serif;
-    width: 180px;
-    text-align: center;
-  }
-  .context-menu-item:hover {
+  color: white;
+  background-color: #282828;
+  border-radius: 2px;
+  font-size: 15px;
+  font-family: "Montserrat", sans-serif;
+  width: 180px;
+  text-align: center;
+}
+.context-menu-item:hover {
     background-color: #333333;
-  }
-  .context-menu{
-      display: block;
-  }
-  .testes{
-      width: 1080px;
-  }
+}
+.context-menu {
+    display: block;
+}
+.video-container {
+    width: 1080px;
+}
+.comments{
+  width: 81%;
+  height: 10px;
+  top: -20px;
+  position: relative;
+  top: -40px;
+  left: 159px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.comment{
+  width: 20px;
+  height: 20px;
+  display: none;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.video-player:hover .comment{
+  display: flex;
+}
+
+.invi{
+  display: none;
+}
+
+.icon-button{
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.icon-button:focus{
+  outline: none;
+}
+.comment-content{
+  color:black;
+}
+
+.modal {
+    font-size: 12px;
+    background-color: #333333;
+    border: 0px;
+    font-family: "Montserrat", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px;
+    border: none;
+}
+.modal > .header {
+  width: 100%;
+  border-bottom: 1px solid gray;
+  font-size: 18px;
+  text-align: center;
+  padding: 5px;
+  margin-bottom: 15px;
+}
+.modal > .content {
+  width: 100%;
+  padding: 10px 5px;
+}
+.modal > .actions {
+    width: 100%;
+    background-color: #8250F7;
+}
+.modal > .close {
+  cursor: pointer;
+  position: absolute;
+  display: block;
+  padding: 2px 5px;
+  line-height: 20px;
+  right: -10px;
+  top: -10px;
+  font-size: 24px;
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #cfcece;
+}
+
+.modal > textarea {
+    width: 80%;
+    height: 100px;
+    resize: none;
+    margin-bottom: 10px;
+    border-radius: 3px;
+}
+
+.modal > .button{
+    background-color: #8250F7;
+    border: none;
+    border-radius: 3px;
+    font-weight: bold;
+    font-size: 17px;
+    color: white;
+    width: 120px;
+    margin-bottom: 15px;
+}
+.modal > .close{
+    background-color: #8250F7;
+    border: none;
+}
+.gambiarra {
+    position: relative;
+    left: 40px;
+    background-color: #212121;
+    border: none;
+}
+
