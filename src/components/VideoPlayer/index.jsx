@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Player } from "video-react";
 import { FaCommentAlt } from "react-icons/fa";
 import Popup from "reactjs-popup";
@@ -7,12 +7,12 @@ import { ContextMenu, MenuItem, ContextMenuTrigger } from "react-contextmenu";
 import "./styles.css";
 import "../../../node_modules/video-react/dist/video-react.css";
 
-export default function VideoPlayer() {
+export default function VideoPlayer({ player, setPlayer }) {
+  const [commentTime, setCommentTime] = useState('');
+
   function handleComment() {
-    /*
-    const { player } = player.getState();
-    console.log(player.currentTime); // print current time
-    */
+    const currentTime = player.getState().player.currentTime;
+    setCommentTime(currentTime); // print current time
   }
 
   const fakeData = [
@@ -35,6 +35,9 @@ export default function VideoPlayer() {
       <ContextMenuTrigger id="some_unique_identifier" className="context-menu">
         <div className="video-container">
           <Player
+            ref={(player) => {
+              setPlayer(player);
+            }}
             playsInline
             poster="/assets/poster.png"
             src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
@@ -81,7 +84,7 @@ export default function VideoPlayer() {
             <a className="close" onClick={close}>
               &times;
             </a>
-            <div className="header"> Adicionar comentário a XX:XX </div>
+            <div className="header"> Adicionar comentário a {commentTime} </div>
 
             <textarea />
 

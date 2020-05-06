@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import SearchVideo from './components/SearchVideo';
 import VideoPlayer from './components/VideoPlayer';
@@ -8,6 +8,8 @@ import './general-styles.css';
 import './App.css';
 
 function App() {
+  const [player, setPlayer] = useState({});
+
   return (
     <div className="App">
       <header>
@@ -15,7 +17,7 @@ function App() {
       </header>
       <main>
         <SearchVideo />
-        <VideoPlayer />
+        <VideoPlayer player={player} setPlayer={setPlayer} />
       </main>
       <VideoControls />
     </div>
