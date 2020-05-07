@@ -20,15 +20,15 @@
   text-align: center;
 }
 .context-menu-item:hover {
-    background-color: #333333;
+  background-color: #333333;
 }
 .context-menu {
-    display: block;
+  display: block;
 }
 .video-container {
-    width: 1080px;
+  width: 1080px;
 }
-.comments{
+.comments {
   width: 81%;
   height: 10px;
   top: -20px;
@@ -37,46 +37,39 @@
   left: 159px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
 }
-.comment{
-  width: 20px;
-  height: 20px;
-  display: none;
-  transition: 0.5s;
-  cursor: pointer;
-}
-.video-player:hover .comment{
+
+.video-player:hover .comment {
   display: flex;
 }
 
-.invi{
+.invi {
   display: none;
 }
 
-.icon-button{
+.icon-button {
   background: none;
   border: none;
   cursor: pointer;
 }
-.icon-button:focus{
+.icon-button:focus {
   outline: none;
 }
-.comment-content{
-  color:black;
+.comment-content {
+  color: black;
 }
 
 .modal {
-    font-size: 12px;
-    background-color: #333333;
-    border: 0px;
-    font-family: "Montserrat", sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    border-radius: 5px;
-    border: none;
+  font-size: 12px;
+  background-color: #333333;
+  border: 0px;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 5px;
+  border: none;
 }
 .modal > .header {
   width: 100%;
@@ -91,8 +84,8 @@
   padding: 10px 5px;
 }
 .modal > .actions {
-    width: 100%;
-    background-color: #8250F7;
+  width: 100%;
+  background-color: #8250f7;
 }
 .modal > .close {
   cursor: pointer;
@@ -109,31 +102,30 @@
 }
 
 .modal > textarea {
-    width: 80%;
-    height: 100px;
-    resize: none;
-    margin-bottom: 10px;
-    border-radius: 3px;
+  width: 80%;
+  height: 100px;
+  resize: none;
+  margin-bottom: 10px;
+  border-radius: 3px;
 }
 
-.modal > .button{
-    background-color: #8250F7;
-    border: none;
-    border-radius: 3px;
-    font-weight: bold;
-    font-size: 17px;
-    color: white;
-    width: 120px;
-    margin-bottom: 15px;
+.modal > .button {
+  background-color: #8250f7;
+  border: none;
+  border-radius: 3px;
+  font-weight: bold;
+  font-size: 17px;
+  color: white;
+  width: 120px;
+  margin-bottom: 15px;
 }
-.modal > .close{
-    background-color: #8250F7;
-    border: none;
+.modal > .close {
+  background-color: #8250f7;
+  border: none;
 }
 .gambiarra {
-    position: relative;
-    left: 40px;
-    background-color: #212121;
-    border: none;
+  position: relative;
+  left: 40px;
+  background-color: #212121;
+  border: none;
 }
-

@@ -1,34 +1,67 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Player } from "video-react";
-import { FaCommentAlt } from "react-icons/fa";
 import Popup from "reactjs-popup";
 import { ContextMenu, MenuItem, ContextMenuTrigger } from "react-contextmenu";
+import Comment from "../Comment";
 
+import format from "../../utils/timeFormater";
+
+import { FaCommentAlt } from "react-icons/fa";
 import "./styles.css";
 import "../../../node_modules/video-react/dist/video-react.css";
 
-export default function VideoPlayer({ player, setPlayer }) {
-  const [commentTime, setCommentTime] = useState('');
-
-  function handleComment() {
-    const currentTime = player.getState().player.currentTime;
-    setCommentTime(currentTime); // print current time
-  }
+export default function VideoPlayer({
+  url = "http://www.w3schools.com/html/mov_bbb.mp4",
+  player,
+  setPlayer,
+}) {
+  const [comment, setComment] = useState("");
+  const [duration, setDuration] = useState(0);
+  const [comments, setComments] = useState([]);
+  const [commentTime, setCommentTime] = useState("");
 
   const fakeData = [
     {
       time: 10,
-      comment: "blablablabla",
+      content: "blablablabla",
     },
     {
       time: 40,
-      comment: "blablablablabla",
+      content: "blablablablabla",
     },
     {
       time: 45,
-      comment: "blablablablabla",
+      content: "blablablablabla",
     },
   ];
+  function handleComment(time, comment) {
+    const newComment = {
+      time,
+      comment,
+    };
+    fakeData.push(newComment);
+    setComment("");
+  }
+
+  function handleCommentTime() {
+    const currentTime = player.getState().player.currentTime;
+    setCommentTime(currentTime);
+  }
+  function handleDuration() {
+    const videoDuration = player.getState().player.duration;
+    setDuration(videoDuration);
+  }
+  useEffect(() => {
+    
+    setComments(fakeData);
+  }, []);
+  
+  useEffect(()=>{
+    if(player.props){
+      const videoReactPoster = document.querySelector(".video-react-poster");
+      videoReactPoster.addEventListener("click", handleDuration);
+    }
+  },[player])
 
   return (
     <div className="video-player">
@@ -40,23 +73,16 @@ export default function VideoPlayer({ player, setPlayer }) {
             }}
             playsInline
             poster="/assets/poster.png"
-            src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
+            src={url}
           ></Player>
           <div className="comments">
-            {fakeData.map((comment) => (
-              <div className="comment">
-                <Popup
-                  trigger={
-                    <button className="icon-button">
-                      <FaCommentAlt size={18} color="#8250F7" />
-                    </button>
-                  }
-                  position="top center"
-                  closeOnDocumentClick
-                >
-                  <span className="comment-content">{comment.comment}</span>
-                </Popup>
-              </div>
+            {comments.map((comment) => (
+              <Comment
+                key={comment.time}
+                time={comment.time}
+                comment={comment.content}
+                totalTime={duration}
+              />
             ))}
           </div>
         </div>
@@ -69,7 +95,7 @@ export default function VideoPlayer({ player, setPlayer }) {
               <MenuItem
                 className="context-menu-item"
                 data={{ foo: "bar" }}
-                onClick={handleComment}
+                onClick={handleCommentTime}
               >
                 Adicionar comentário
               </MenuItem>
@@ -84,14 +110,21 @@ export default function VideoPlayer({ player, setPlayer }) {
             <a className="close" onClick={close}>
               &times;
             </a>
-            <div className="header"> Adicionar comentário a {commentTime} </div>
+            <div className="header">
+              {" "}
+              Adicionar comentário a {format(commentTime)}{" "}
+            </div>
 
-            <textarea />
+            <textarea
+              value={comment}
+              onChange={(e) => setComment(e.target.value)}
+            />
 
             <button
               className="button"
               onClick={() => {
-                console.log("foi");
+                handleComment(commentTime, comment);
+                close();
               }}
             >
               comentar

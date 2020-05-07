@@ -1,0 +1,15 @@
+.comment{
+    width: 20px;
+    height: 20px;
+    display: none;
+    transition: 0.5s;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+  }
+.comment-time{
+  border-bottom: 1px solid gray;
+  margin-bottom: 10px;
+}
