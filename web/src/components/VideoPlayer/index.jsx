@@ -11,7 +11,7 @@ import "./styles.css";
 import "../../../node_modules/video-react/dist/video-react.css";
 
 export default function VideoPlayer({
-  url = "http://www.w3schools.com/html/mov_bbb.mp4",
+  url,
   player,
   setPlayer,
 }) {
@@ -52,16 +52,15 @@ export default function VideoPlayer({
     setDuration(videoDuration);
   }
   useEffect(() => {
-    
     setComments(fakeData);
   }, []);
-  
-  useEffect(()=>{
-    if(player.props){
+
+  useEffect(() => {
+    if (player.props) {
       const videoReactPoster = document.querySelector(".video-react-poster");
       videoReactPoster.addEventListener("click", handleDuration);
     }
-  },[player])
+  }, [player]);
 
   return (
     <div className="video-player">
